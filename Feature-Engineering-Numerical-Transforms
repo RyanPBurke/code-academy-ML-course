@@ -1,3 +1,5 @@
+## sample code
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,6 +26,35 @@ plt.ylabel('Count')
 
 plt.show()
 
+## exercise code
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import codecademylib3_seaborn 
 
+coffee = pd.read_csv('starbucks_customers.csv')
+ages = coffee['age']
+
+## put the data into discrete bins
+
+print(np.min(ages))
+print(np.max(ages))
+
+## set bin boundaries
+
+age_bins = [12, 20, 30, 40, 71]
+
+## create new binned column with pd.cut
+
+coffee['binned_ages'] = pd.cut(coffee['age'], age_bins, right = False)
+
+## print first 10 columns of binned_ages
+
+print(coffee['binned_ages'].head(10))
+
+
+## plot bar graph of binned data
+
+coffee['binned_ages'].value_counts().plot(kind='bar')
 
 
