@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import codecademylib3_seaborn 
+
+coffee = pd.read_csv('starbucks_customers.csv')
+ages = coffee['age']
+
+## put the data into discrete bins
+
+bins = [0, 1, 3, 5, 8.1]
+
+## plot the bar graph of bined distances
+
+coffee['binned_distance'].value_counts().plot(kind='bar')
+
+## label the bar graph
+
+plt.title('Starbucks Distance Distribution')
+plt.xlabel('Distance')
+plt.ylabel('Count')
+
+## show the bar graph
+
+plt.show()
+
+
+
+
